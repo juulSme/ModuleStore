@@ -3,6 +3,7 @@ on:
   push:
     branches: ["main"]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
@@ -15,12 +16,12 @@ jobs:
       # https://hexdocs.pm/elixir/1.18/compatibility-and-deprecations.html#compatibility-between-elixir-and-erlang-otp
       matrix:
         elixir: [1.12.x, 1.18.x]
-        otp: [22.x, 27.x]
+        otp: [24.x, 27.x]
         exclude:
           - elixir: 1.12.x
             otp: 27.x
           - elixir: 1.18.x
-            otp: 22.x
+            otp: 24.x
 
     steps:
       - name: Checkout code
