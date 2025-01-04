@@ -21,3 +21,7 @@ module_store-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+/.elixir_ls
+/.vscode/*
+!/.vscode/*_example.json
