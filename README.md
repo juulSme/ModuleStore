@@ -4,6 +4,22 @@ Use a compiled module as a high-performance key-value store. Suitable for low-wr
 
 Because every mutation triggers a module recompilation, which requires using a global lock (per node) for mutations to prevent concurrent compilations causing a crash, write performance is awful (by design) and mutations should be kept to a minimum. You can expect write performance to be in the range of 5-25 ops/s. In return, read perfomance sits around 50 million ops/s.
 
+## Installation
+
+The package is hosted on [hex.pm](https://hex.pm/packages/module_store) can be installed by adding `module_store` to your list of dependencies in `mix.exs`:
+
+```elixir
+def deps do
+  [
+    {:module_store, "~> 0.0.1"}
+  ]
+end
+```
+
+## Docs
+
+Documentation can be found on [hexdocs.pm](https://hexdocs.pm/module_store/).
+
 ## Examples / doctests
 
 ```elixir
@@ -90,20 +106,3 @@ ModuleStore.put                        0.00002 M - 2219906.64x slower +43935185.
 ```
 
 So it's as fast as it gets when reading (and it's consistent), but it's atrocious when writing. As advertised.
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `module_store` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:module_store, "~> 0.0.1"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/module_store>.
