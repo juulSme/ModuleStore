@@ -61,7 +61,7 @@ ModuleStore.new(MyApp.Store)
 
 ## Benchmarks
 
-```console
+```
 CPU Information: AMD Ryzen 7 9700X 8-Core Processor
 Number of Available Cores: 16
 Available memory: 30.94 GB
