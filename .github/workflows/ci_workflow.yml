@@ -55,4 +55,5 @@ jobs:
       - name: Run tests
         run: mix test
       - name: Create docs
+        if: matrix.elixir == '1.18.x'
         run: mix docs
